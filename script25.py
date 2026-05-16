@@ -54,14 +54,15 @@ def add_book():
     print(" Книга добавлена!")
 
 
-def show_all_books():
+def show_all_books():       #(1)
     books = load_books()
 
     if not books:
         print("\n Нет добавленных книг")
         return
 
-    print("\n--- Все книги ---")
+    print("\n" + "=" * 30)
+    print("--- Все книги ---")
     for i, book in enumerate(books, 1):
         print(f"{i}. {book['author']} — «{book['title']}»")
         print(f"   Оценка: {book['rating']}/5, Дата: {book['date']}\n")
